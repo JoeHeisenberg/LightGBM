@@ -114,5 +114,5 @@ cd $TRAVIS_BUILD_DIR/python-package && python setup.py install --precompile || e
 cd $TRAVIS_BUILD_DIR && pytest . || exit -1
 
 if [[ ${TASK} == "regular" ]]; then
-    cd $TRAVIS_BUILD_DIR/examples/python-guide && for f in *.py; do python $f; done || exit -1
+    cd $TRAVIS_BUILD_DIR/examples/python-guide && for f in *.py; do python $f || exit -1; done
 fi
